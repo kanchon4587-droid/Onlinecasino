@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claim Bonus</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      background-size: 400% 400%;
+      animation: gradientMove 8s ease infinite;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.2em;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    #claimBtn {
+      background: linear-gradient(90deg, #2575fc, #6a11cb);
+      border: none;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    #claimBtn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    #claimBtn:disabled {
+      background: #555;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      h1 { font-size: 1.6em; }
+      .box { padding: 24px; }
+      #claimBtn { width: 100%; padding: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎁 Claim Your Bonus Links</h1>
+  <p>Tap the button below to automatically open all your bonus links — one by one!</p>
+
+  <div class="box">
+    <button id="claimBtn">Claim Bonus</button>
+  </div>
+
+  <footer>
+    <p>© <script>document.write(new Date().getFullYear())</script> — Claim Bonus Page</p>
+  </footer>
+
+  <script>
+    const links = [
+      "https://salvageapplet.com/tu6jyepb?key=b563accab189dca428fde6606bb59a56",
+      "https://salvageapplet.com/vred20i6x6?key=66e50dbcd34cbffb47d2bedf8a4b5b80",
+      "https://salvageapplet.com/srxd7q0sd6?key=62efe22e20b26acfb8cf8e6ad2a66a1e",
+      "https://foreststobaccodecember.com/w3v502fr?key=e8bda1aef09538e0bf235e46c40898fc",
+      "https://foreststobaccodecember.com/apaptaws9?key=dea1beb1c479991918879fb571842955",
+      "https://foreststobaccodecember.com/u9wmnritds?key=e761a417a0125082cc380e666fd74858",
+      "https://manyielding.com/k71b8w5wmj?key=21d1281dbdd9e2ef67c895f1661868da",
+      "https://manyielding.com/b950brdw5t?key=6be9464c3c7b88a85f4311f3dd3ca1c5"
+    ];
+
+    let index = 0;
+    const btn = document.getElementById("claimBtn");
+
+    btn.addEventListener("click", () => {
+      if (index < links.length) {
+        window.open(links[index], "_blank", "noopener,noreferrer");
+        index++;
+        if (index >= links.length) {
+          btn.disabled = true;
+          btn.textContent = "✅ All Links Opened!";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
